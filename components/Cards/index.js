@@ -58,9 +58,9 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
   console.log(puppers); // array with objects
 
   for(const prop in puppers) {
-    const value = puppers[prop];
+    const article = puppers[prop];
 
-    value.forEach(item => {
+    article.forEach(item => {
       cardDeck.append(cardCreator(item));
     })
   }
@@ -69,7 +69,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
   //   cardDeck.append(cardCreator(item));
   // })
 })
-
 .catch(err => {
   console.log(err);
 })
