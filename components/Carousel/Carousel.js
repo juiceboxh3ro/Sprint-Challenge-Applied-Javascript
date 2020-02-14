@@ -17,3 +17,76 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+// 2
+const carouselImages = [
+  './assets/carousel/mountains.jpeg',
+  './assets/carousel/computer.jpeg',
+  './assets/carousel/trees.jpeg',
+  './assets/carousel/turntable.jpeg'
+];
+
+// 3
+let currentIndex = 0;
+
+function carousel (arr) {
+  const carouselDiv = document.createElement('div'),
+  btnLeft = document.createElement('div'),
+  image = document.createElement('img'),
+  btnRight = document.createElement('div')
+
+  carouselDiv.classList.add('carousel');
+  btnLeft.classList.add('left-button');
+  btnRight.classList.add('right-button');
+
+  image.src = arr[0];
+
+  image.style.display = 'block'
+
+  btnLeft.textContent = '◀';
+  btnRight.textContent = '▶';
+
+  carouselDiv.append(btnLeft)
+  carouselDiv.append(btnRight)
+  carouselDiv.append(image)
+
+  // 4
+  btnLeft.addEventListener('click', () => {
+    if(currentIndex == 0) {
+      currentIndex = 3
+      image.src = arr[currentIndex]
+    } else if (currentIndex == 3) {
+      currentIndex = 2
+      image.src = arr[currentIndex]
+    } else if (currentIndex == 2) {
+      currentIndex = 1
+      image.src = arr[currentIndex]
+    } else if (currentIndex == 1) {
+      currentIndex = 0
+      image.src = arr[currentIndex]
+    }
+  })
+
+  btnRight.addEventListener('click', e => {
+    if(currentIndex == 0) {
+      currentIndex = 1
+      image.src = arr[currentIndex]
+    } else if (currentIndex == 1) {
+      currentIndex = 2
+      image.src = arr[currentIndex]
+    } else if (currentIndex == 2) {
+      currentIndex = 3
+      image.src = arr[currentIndex]
+    } else if (currentIndex == 3) {
+      currentIndex = 0
+      image.src = arr[currentIndex]
+    }
+  })
+
+  return carouselDiv;
+}
+
+const carouselHolder = document.querySelector('.carousel-container');
+
+carouselHolder.append(carousel(carouselImages));
+

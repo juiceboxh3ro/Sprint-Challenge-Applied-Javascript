@@ -30,13 +30,24 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+  document object model, the way a browser interprets our HTML
+
 2. What is an event?
+
+  an interaction with the browser; click, scroll, key presses, etc
 
 3. What is an event listener?
 
+  an event listener watches for those events and allows us to utilize them for such things as DOM manipulation
+
 4. Why would we convert a NodeList into an Array?
 
+  although NodeList has access to forEach, converting it to an array would give us more array method options, and allow us to iterate over the items in the NodeList as if it were an array. we could use this to update text in an lior apply a click event to individual anchor tags in a more dynamic way for example.
+
 5. What is a component?
+
+  a component is HTML, CSS, and JavaScript created in a function which we can dynamically inject into the DOM and, taking today for example, create multiple cards with data unique to each card
+
 
 ### Git Set up
 
@@ -51,11 +62,11 @@ Your finished project must include all of the following requirements:
 
 * [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
 
-* [ ] Following the instructions in the `Header/index.js` file, create the Header component. 
+* [✓] Following the instructions in the `Header/index.js` file, create the Header component. 
 
-* [ ] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
+* [✓] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
 
-* [ ] Following the instructions in the `Cards/index.js` file, create individual Cards components.
+* [✓] Following the instructions in the `Cards/index.js` file, create individual Cards components.
 
 ## Stretch Problems
 
