@@ -57,14 +57,19 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
   const puppers = res.data.articles;
   console.log(puppers); // array with objects
 
-  const dynamicArticle = Object.keys(puppers).forEach(articl => {
-    return articl;
-  })
+  for(const prop in puppers) {
+    const value = puppers[prop];
 
-  puppers.forEach(item => {
-    cardDeck.append(cardCreator(item));
-  })
+    value.forEach(item => {
+      cardDeck.append(cardCreator(item));
+    })
+  }
+
+  // puppers.javascript.forEach(item => {
+  //   cardDeck.append(cardCreator(item));
+  // })
 })
+
 .catch(err => {
   console.log(err);
 })
